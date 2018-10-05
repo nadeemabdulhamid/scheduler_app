@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Home Page</title>
+
+    <style>
+      body {
+        margin: 0px;
+        padding: 0px;
+      }
+      .nav-bar ul {
+        margin: 0px 0px 0px;
+        padding: 8px 8px;
+        background-color: rgba(196, 66, 66, 0.74);
+      }
+      .nav-bar li {
+        list-style: none;
+        display: inline;
+        color: white;
+        font-family: sans-serif;
+        font-size: 13pt;
+      }
+      .nav-bar a {
+        text-decoration: none;
+        padding-left: 10px;
+      }
+      a:link {
+          color: white;
+          font-family: sans-serif;
+          font-size: 13pt;
+      }
+      a:visited {
+          color: white;
+      }
+      a:hover {
+          color: rgb(184, 183, 194);
+      }
+      a:active {
+          color: rgb(92, 191, 161);
+      }
+    </style>
+
+  </head>
+  <body>
+
+    <div class="nav-bar">
+      <ul>
+        <li> <a href="{% url 'schedule-home' %}"><strong>Home</strong></a> </li>
+        <li> <a href="{% url 'schedule-schedule' %}"><strong>Schedule</strong></a> </li>
+        {% if user.is_authenticated %}
+          <li>User: {{ user.get_username }}</li>
+          <li><a href="#" style="float:right;"><strong>Logout</strong></a></li>
+        {% else %}
+          <li><a href="#" style="float:right;"><strong>Login</strong></a></li>
+        {% endif %}
+      </ul>
+    </div>
+
+    {% block content %}
+
+    {% endblock %}
+  </body>
+</html>
