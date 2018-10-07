@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    "sslserver",
+    'sslserver',
 
     'django.contrib.sites',
 
@@ -47,7 +47,8 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
 
     # Enabled Providers:
-    'allauth.socialaccount.providers.windowslive',
+    'allauth.socialaccount.providers.google',
+    'allauth_office365',
 ]
 
 SITE_ID = 2
@@ -136,6 +137,9 @@ USE_L10N = True
 
 USE_TZ = True
 
+
+LOGIN_REDIRECT_URL = 'schedule-home'
+LOGOUT_REDIRECT_URL = 'schedule-home'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/

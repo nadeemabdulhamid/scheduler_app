@@ -49,8 +49,8 @@
         <li> <a href="{% url 'schedule-home' %}"><strong>Home</strong></a> </li>
         <li> <a href="{% url 'schedule-schedule' %}"><strong>Schedule</strong></a> </li>
         {% if user.is_authenticated %}
-          <li><strong>User: {{ user.get_username }}</strong></li>
-          <li><a href="www.google.com" style="float:right;"><strong>Logout</strong></a></li>
+          <li style="color:blue; padding-left: 20px;"><strong>User: {{ user.get_username|capfirst }}</strong></li>
+          <li><a href="accounts/logout/" style="float:right;"><strong>Logout</strong></a></li>
         {% else %}
           <li><a href="accounts/login/" style="float:right;"><strong>Login</strong></a></li>
         {% endif %}
